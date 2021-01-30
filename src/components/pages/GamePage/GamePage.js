@@ -41,17 +41,14 @@ const GamePage = ({ movescount, setmovescount }) => {
     const sid = items[random].shop_id;
 
     const data = await axios({
-      // method: "get",
-      // url:
-      //   "https://cors-anywhere.herokuapp.com/https://api.hackathon2021.shopee.sg/item/get_info",
-      // params: { item_id: iid, shop_id: sid },
-      // headers: { "X-Hackathon-Token": "d2FCfESvB9l8l5xYne8d" }
-
       method: "get",
-      url: "https://jsonplaceholder.typicode.com/todos/1"
+      url:
+        "https://cors-anywhere.herokuapp.com/https://api.hackathon2021.shopee.sg/item/get_info",
+      params: { item_id: iid, shop_id: sid },
+      headers: { "X-Hackathon-Token": "d2FCfESvB9l8l5xYne8d" }
     });
-    // setitemData(data.data.data.cover);
-    setitemData("https://cf.shopee.sg/file/8bfa615c1433fbb60a9bfaa70d1372a0");
+    setitemData(data.data.data.cover);
+    // setitemData("https://cf.shopee.sg/file/8bfa615c1433fbb60a9bfaa70d1372a0");
     setTimeout(function () {
       handletrigertoggle();
     }, 1500);
