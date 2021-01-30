@@ -1,0 +1,39 @@
+.container {
+  text-align: center;
+}
+
+.buttonLink {
+  background-color: #f7422e;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.HelpText {
+  position: relative;
+  text-align: center;
+  top: 200px;
+}
+
+.HelpIcon {
+  position: relative;
+  top: 20px;
+  left: -120px;
+}
+
+.carouselDiv {
+  padding: 50px;
+}
+
+.start-image img {
+  padding-top: 40px;
+  width: 60%;
+  height: auto;
+}
