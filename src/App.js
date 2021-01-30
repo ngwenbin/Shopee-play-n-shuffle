@@ -13,7 +13,7 @@ const App = () => {
         <Fragment>
           <NavBar />
           <Switch>
-            <Route path="/start" component={Start} />
+            <Route exact path="/" component={Start} />
             <Route path="/game" component={Game} />
             <Route path="/summary" component={Summary} />
           </Switch>
