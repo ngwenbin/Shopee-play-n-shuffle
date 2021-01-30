@@ -38,8 +38,7 @@ const GamePage = ({ movescount, setmovescount }) => {
 
     const data = await axios({
       method: "get",
-      url:
-        "https://cors-anywhere.herokuapp.com/https://api.hackathon2021.shopee.sg/item/get_info",
+      url: "https://api.hackathon2021.shopee.sg/item/get_info",
       params: { item_id: iid, shop_id: sid },
       headers: { "X-Hackathon-Token": "d2FCfESvB9l8l5xYne8d" }
     });
