@@ -1,39 +1,72 @@
 .container {
   text-align: center;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-.buttonLink {
+.buttonLink button {
   background-color: #f7422e;
   border: none;
+  outline: none;
   color: white;
-  padding: 15px 32px;
+  min-width: 220px;
+  padding: 12px 30px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 15px 0;
   cursor: pointer;
   border-radius: 4px;
+  border-radius: 10px;
 }
 
-.HelpText {
-  position: relative;
-  text-align: center;
-  top: 200px;
+.buttonLink:active {
+  transform: translateY(4px);
 }
 
-.HelpIcon {
-  position: relative;
-  top: 20px;
-  left: -120px;
+.HelpPicture img {
+  position: absolute;
+  max-width: 100%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: red;
 }
 
-.carouselDiv {
-  padding: 50px;
+.HelpIcon button {
+  color: black;
+  cursor: pointer;
+  display: flex;
+  align-items: left;
+  margin: 20px;
+}
+
+.Counter {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  bottom: auto;
+}
+
+.RewardPicture img {
+  position: absolute;
+  max-width: 100%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.PrizesIcon button {
+  display: inline;
+  cursor: pointer;
+  vertical-align: middle;
 }
 
 .start-image img {
-  padding-top: 40px;
-  width: 60%;
+  padding: 10px 0px 20px 0;
+  width: 65%;
   height: auto;
 }

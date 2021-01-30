@@ -3,56 +3,90 @@ import { Link } from "react-router-dom";
 import "./Start.css";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
 import fancy_image from "../../../assets/fancy_image.svg";
+import help_picture from "../../../assets/help_picture.webp";
+import shopee_rewards from "../../../assets/shopee_rewards.jpg";
+import { IconContext } from "react-icons/lib";
 
-const Start = () => {
+const Start = ({ counter, setCounter }) => {
   const [helpEnabled, sethelpEnabled] = useState(false); // share tray state
+  const [rewardEnabled, setrewardEnabled] = useState(false);
   const handleHelpToggle = () => sethelpEnabled(!helpEnabled); // handle ON/ OFF share modal popup
-
-  const [carouselEnabled, setcarouselEnabled] = useState(false);
-  const handleCarouselToggle = () => setcarouselEnabled(!carouselEnabled);
+  const handlerewardToggle = () => setrewardEnabled(!rewardEnabled);
 
   return (
     <>
-      <div className="container">
-        <div
-          className="HelpText"
-          style={{
-            display: helpEnabled ? null : "none",
-            zIndex: 1000,
-            position: "absolute"
-          }}
-        >
-          <h2>INSERT HELP TEXT</h2>
-        </div>
-
-        <div className="HelpIcon">
-          <button // Help button
+      <IconContext.Provider value={{ color: "#000000", size: 32 }}>
+        <div className="container">
+          <div
+            className="HelpPicture"
             onClick={handleHelpToggle}
             style={{
-              color: "black",
-              padding: "8px",
-              background: "none",
-              border: "none"
+              display: helpEnabled ? null : "none"
             }}
           >
-            <AiOutlineQuestionCircle />
-          </button>
+            <img src={help_picture} alt=""></img>
+          </div>
+          <div
+            className="RewardPicture"
+            onClick={handlerewardToggle}
+            style={{
+              display: rewardEnabled ? null : "none",
+              zIndex: 1100
+            }}
+          >
+            <img src={shopee_rewards} alt=""></img>
+          </div>
+          <div className="HelpIcon">
+            <button // Help button
+              onClick={handleHelpToggle}
+              style={{
+                color: "black",
+                padding: "2px",
+                background: "none",
+                border: "none",
+                outline: "none"
+              }}
+            >
+              <AiOutlineQuestionCircle />
+            </button>
+          </div>
+          <div className="start-image">
+            <img src={fancy_image} alt=""></img>
+          </div>
+          <div className="buttonLink">
+            <button // Help button
+              onClick={handlerewardToggle}
+              style={{
+                backgroundColor: "white",
+                color: "#f7422e",
+                border: "solid",
+                borderWidth: "2px",
+                borderColor: "#f7422e"
+              }}
+            >
+              <span>REWARDS</span>
+            </button>
+          </div>
+          {counter < 1 ? (
+            <div className="buttonLink">
+              <button>
+                <span>Need more tokens!</span>
+              </button>
+            </div>
+          ) : (
+            <Link to="/game">
+              <div className="buttonLink">
+                <button onClick={() => setCounter(counter - 1)}>
+                  <span>Play now!</span>
+                </button>
+              </div>
+            </Link>
+          )}
+          <div className="Counter">
+            <p>Tokens left: {counter}</p>
+          </div>
         </div>
-        <div
-          style={{
-            display: helpEnabled ? null : "none"
-          }}
-        ></div>
-        <div className="start-image">
-          <img src={fancy_image} alt=""></img>
-        </div>
-        <div className="carouselDiv">Your carousel here</div>
-        <Link to="/game">
-          <button className="buttonLink" renderAs="button">
-            <span>Play Now!</span>
-          </button>
-        </Link>
-      </div>
+      </IconContext.Provider>
     </>
   );
 };

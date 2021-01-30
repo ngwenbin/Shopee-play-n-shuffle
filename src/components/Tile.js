@@ -1,7 +1,7 @@
 import React from "react";
 import "./pages/GamePage/Game.css";
 
-const Tile = ({ index, pos, onClick }) => {
+const Tile = ({ index, pos, onClick, itemData }) => {
   const top = pos[0] * 65 + 5;
   const left = pos[1] * 65 + 5;
   const bgLeft = (index % 4) * 65 + 5;
@@ -11,7 +11,12 @@ const Tile = ({ index, pos, onClick }) => {
     <div
       className="tile"
       onClick={onClick}
-      style={{ top, left, backgroundPosition: `-${bgLeft}px -${bgTop}px` }}
+      style={{
+        top,
+        left,
+        backgroundPosition: `-${bgLeft}px -${bgTop}px`,
+        backgroundImage: `url(${itemData})`
+      }}
     />
   );
 };

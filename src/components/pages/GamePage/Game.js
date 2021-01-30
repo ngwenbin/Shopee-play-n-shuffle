@@ -37,9 +37,9 @@ const useGameState = () => {
   return [state.board, state.moves, state.solved, move];
 };
 
-const Game = () => {
+const Game = ({ itemData, movescount, setmovescount }) => {
   const [board, moves, solved, move] = useGameState();
-
+  const handlemovesToggle = () => setmovescount(moves);
   return (
     <div className="game-container">
       <div className="game-header">
@@ -47,14 +47,21 @@ const Game = () => {
       </div>
       <div className="board">
         {board.slice(0, -1).map((pos, index) => (
-          <Tile index={index} pos={pos} onClick={move(index)} />
+          <Tile
+            index={index}
+            pos={pos}
+            onClick={move(index)}
+            itemData={itemData}
+          />
         ))}
         {solved && (
           <div className="overlay">
             <Link to="/summary">
-              <button className="buttonLink" renderAs="button">
-                <span>Continue</span>
-              </button>
+              <div className="buttonLink">
+                <button onClick={handlemovesToggle}>
+                  <span>Continue!</span>
+                </button>
+              </div>
             </Link>
           </div>
         )}

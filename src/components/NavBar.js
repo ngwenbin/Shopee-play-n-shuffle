@@ -4,9 +4,11 @@ import "./NavBar.css";
 const NavBar = () => {
   return (
     <>
-      <nav className="navbar">
-        <h1>Shopee Shake n' Shuffle</h1>
-      </nav>
+      <div className="container">
+        <nav className="navbar">
+          <h1>Shopee Play n' Shuffle</h1>
+        </nav>
+      </div>
     </>
   );
 };
