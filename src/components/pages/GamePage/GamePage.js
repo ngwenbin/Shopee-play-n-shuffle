@@ -26,10 +26,6 @@ const GamePage = ({ movescount, setmovescount }) => {
       shop_id: "120981896"
     },
     {
-      item_id: "3418438242",
-      shop_id: "115496847"
-    },
-    {
       item_id: "5935264486",
       shop_id: "91799978"
     }
